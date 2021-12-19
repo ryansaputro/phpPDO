@@ -12,24 +12,24 @@
 
 # API
 buka aplikasi postman anda
-contoh:
-1. list transaksi: http://localhost/development/pribadi/transaksi (GET).
-2. detail transaksi: http://localhost/development/pribadi/transaksi/detail/{id} (GET).
-3. create transaksi: http://localhost/development/pribadi/transaksi/create (POST).
-    - untuk memberikan value data yang ingin disimpan pilih tab body dan pilih raw.
-        contoh membuat data transaksi dengan data lebih dari 1.:
-                [
-                    {
-                        "id_item":1,
-                        "jumlah":1,
-                        "harga":2000 
-                    },
-                    {
-                        "id_item":2,
-                        "jumlah":3,
-                        "harga": 200 
-                    }
-                ]
+ - contoh:
+    1. list transaksi: http://localhost/development/pribadi/transaksi (GET).
+    2. detail transaksi: http://localhost/development/pribadi/transaksi/detail/{id} (GET).
+    3. create transaksi: http://localhost/development/pribadi/transaksi/create (POST).
+        - untuk memberikan value data yang ingin disimpan pilih tab body dan pilih raw.
+            contoh membuat data transaksi dengan data lebih dari 1.:
+                    [
+                        {
+                            "id_item":1,
+                            "jumlah":1,
+                            "harga":2000 
+                        },
+                        {
+                            "id_item":2,
+                            "jumlah":3,
+                            "harga": 200 
+                        }
+                    ]
     
 # CLI WINDOWS
 1. buka cmd anda dan arahkan ke folder project yang telah kita salin.
