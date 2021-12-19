@@ -13,11 +13,12 @@
 # API
 buka aplikasi postman anda
 <br /> contoh:
-    1. list transaksi: http://localhost/development/pribadi/transaksi (GET).
-    2. detail transaksi: http://localhost/development/pribadi/transaksi/detail/{id} (GET).
-    3. create transaksi: http://localhost/development/pribadi/transaksi/create (POST).
-        - untuk memberikan value data yang ingin disimpan pilih tab body dan pilih raw.
-            contoh membuat data transaksi dengan data lebih dari 1.:
+<br />
+1. list transaksi: http://localhost/development/pribadi/transaksi (GET).<br />
+2. detail transaksi: http://localhost/development/pribadi/transaksi/detail/{id} (GET).<br />
+3. create transaksi: http://localhost/development/pribadi/transaksi/create (POST).<br />
+        - untuk memberikan value data yang ingin disimpan pilih tab body dan pilih raw.<br />
+            contoh membuat data transaksi dengan data lebih dari 1 :<br />
                     [
                         {
                             "id_item":1,
