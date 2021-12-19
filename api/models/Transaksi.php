@@ -30,7 +30,7 @@ class Transaksi{
 			$qty = $data[$i]['jumlah'];
 			$harga = $data[$i]['harga'];
 			
-			if(!is_numeric($qty) || !is_numeric($harga)){
+			if(!is_numeric($qty) || !is_numeric($harga) || $qty < 0 || $harga < 0){
 				return 0;
 			}
 
