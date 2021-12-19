@@ -11,6 +11,7 @@
 
 
 # API
+buka aplikasi postman anda
 contoh:
 1. list transaksi: http://localhost/development/pribadi/transaksi (GET).
 2. detail transaksi: http://localhost/development/pribadi/transaksi/detail/{id} (GET).
