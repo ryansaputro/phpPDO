@@ -12,7 +12,7 @@
 
 # API
 buka aplikasi postman anda
- - contoh:
+<br /> contoh:
     1. list transaksi: http://localhost/development/pribadi/transaksi (GET).
     2. detail transaksi: http://localhost/development/pribadi/transaksi/detail/{id} (GET).
     3. create transaksi: http://localhost/development/pribadi/transaksi/create (POST).
