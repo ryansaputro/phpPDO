@@ -22,8 +22,7 @@ buka aplikasi postman anda
         contoh: <br />
         ```json
                 {
-                    "invoice_id": "INV123",
-                    "payment_type": "credit_cards",
+                    "payment_type": "credit_card",
                     "customer_name": "ryan",
                     "merchant_id": "TRX01",
                     "item": [
