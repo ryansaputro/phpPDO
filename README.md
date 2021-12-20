@@ -52,11 +52,11 @@ buka aplikasi postman anda
 2. pindah ke folder CLI dengan cara ketik cd CLI
 3. running command
     - lihat semua command yang tersedia: php transaksi.php.
-    - cek transaksi: php transaksi.php cekTransaksi {no invoice}
-    - update status pembayaran: php transaksi.php updateTransaksi {no invoice}
+    - migrasi table dan data: php transaksi.php migration
+    - update status pembayaran: php transaksi.php updateTransaksi {references id} {status}
 
 
 ## NOTE
-{no invoice}: no invoice yang ingin di cek tanpa tanda {}
+{references id}: references id yang ingin di cek tanpa tanda {}
     contoh:
-            php transaksi.php cekTransaksi INV202112180912
+            php transaksi.php cekTransaksi 1 1
