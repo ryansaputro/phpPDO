@@ -19,7 +19,7 @@ buka aplikasi postman anda
 <br />
 1. Membuat/Create data Transaksi Pembayaran: http://localhost/development/pribadi/transaksi/create (POST).<br />
     - untuk memberikan value data yang ingin disimpan pilih tab body dan pilih raw.<br />
-        contoh membuat data transaksi dengan data lebih dari 1 :<br />
+        contoh: <br />
         ```json
                 {
                     "invoice_id": "INV123",
@@ -46,7 +46,7 @@ buka aplikasi postman anda
             "references_id": "1",
             "merchant_id": "TRX01"
         }
-    ```
+    
 # CLI WINDOWS
 1. buka cmd anda dan arahkan ke folder project yang telah kita salin.
 2. pindah ke folder CLI dengan cara ketik cd CLI
