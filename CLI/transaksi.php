@@ -4,57 +4,34 @@
 include "M_transaksi.php";
 
 if (1 == $argc) {
-    fwrite(STDOUT, "Welcome to Transaksi CLI" . "\n\n");
+    fwrite(STDOUT, "Transaction CLI v1.0" . "\n\n");
     writeAvailableCommands();
     return;
 }
 
 switch ($argv[1]) {
-    case 'cekTransaksi':
-        if (!array_key_exists(2, $argv)) {
-            fwrite(STDOUT, "mohon masukkan no invoice anda." . "\n");
-            writeAvailableCommands();
-            return;
-        } else {
-            $noInvoice = $argv[2];    
-            $db = new MTransaksi;
-            $data = $db->cekTransaksi($noInvoice);
-            foreach($data AS $k => $v){
-                fwrite(STDOUT, "INVOICE: ".$v['invoice'] . "\n");
-                fwrite(STDOUT, "TANGGAL: ".$v['tanggal'] . "\n");
-                fwrite(STDOUT, "TOTAL: ".number_format($v['total']) . "\n");
-                fwrite(STDOUT, "STATUS: ".($v['status'] === "0" ? "Pending" : "Paid") . "\n");
-            }
-        }
-    
-    break;       
-        
     case 'updateTransaksi':
     if (!array_key_exists(2, $argv)) {
         fwrite(STDOUT, "mohon masukkan no invoice anda." . "\n");
         writeAvailableCommands();
         return;
     } else {
-        $noInvoice = $argv[2];    
-        fwrite(STDOUT, "status:" . "\n");
-        fwrite(STDOUT, "0: Pending" . "\n");
-        fwrite(STDOUT, "1: Paid" . "\n");
-        fwrite(STDOUT, "Masukkan status pembayaran(0/1):" . "\n");
-        $status = htmlspecialchars(trim(fgets(STDIN)));
+        $references_id = $argv[2];    
+        $status = $argv[3];    
 
-        $jenisStatus = array('1', '0');
+        $jenisStatus = array('1', '2', '3');
         if(!in_array($status, $jenisStatus)){
-            fwrite(STDOUT, "status tidak valid" . "\n");
+            fwrite(STDOUT, "status payment is not valid" . "\n");
             return;
         }
 
         $db = new MTransaksi;
-        $data = $db->updateTransaksi($noInvoice,$status);
+        $data = $db->updateTransaksi($references_id,$status);
         if($data == '1'){
-            fwrite(STDOUT, "sukses update status" . "\n");
+            fwrite(STDOUT, "updated status payment success" . "\n");
             return;
         }else{
-            fwrite(STDOUT, "gagal update status" . "\n");
+            fwrite(STDOUT, "updated status payment fail" . "\n");
             return;
 
         }
@@ -77,8 +54,12 @@ switch ($argv[1]) {
 function writeAvailableCommands()
 {
     $text = "php transaksi.php";
+    fwrite(STDOUT, "status:" . "\n");
+    fwrite(STDOUT, "1: Pending" . "\n");
+    fwrite(STDOUT, "2: Paid" . "\n");
+    fwrite(STDOUT, "3: Failed" . "\n\n");
+
     fwrite(STDOUT, "Available commads:" . "\n\n");
     fwrite(STDOUT, "$text migration". "\n");
-    fwrite(STDOUT, "$text cekTransaksi {no invoice}". "\n");
-    fwrite(STDOUT, "$text updateTransaksi {no invoice}". "\n");
+    fwrite(STDOUT, "$text updateTransaksi {references id} {status}". "\n");
 }
