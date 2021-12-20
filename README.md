@@ -17,7 +17,7 @@
 buka aplikasi postman anda
 <br /> contoh:
 <br />
-1. Membuat/Create data Transaksi Pembayaran: http://localhost/development/pribadi/transaksi/create (POST).<br />
+1. Membuat/Create data Transaksi Pembayaran: http://localhost/development/pribadi/transaksi/create (**POST**).<br />
     - untuk memberikan value data yang ingin disimpan pilih tab body dan pilih raw.<br />
         contoh: <br />
         ```json
@@ -40,7 +40,7 @@ buka aplikasi postman anda
                 }
         ```
     <br/>
-2. Mendapatkan/Get status Transaksi Pembayaran: http://localhost/development/pribadi/transaksi/get_status_payment <br/>
+2. Mendapatkan/Get status Transaksi Pembayaran: http://localhost/development/pribadi/transaksi/get_status_payment (**GET**)<br/>
     - ```json
         {
             "references_id": "1",
