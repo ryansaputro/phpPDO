@@ -31,7 +31,7 @@ class Transaksi{
 		}
 
 
-		$this->db->query('SELECT id, invoice_id, (CASE WHEN status = "1" THEN "Pending" WHEN status = "2" THEN "Paid" ELSE "Failed" END) as status FROM '.$this->table.' WHERE id=:id AND merchant_id=:merchant_id');
+		$this->db->query('SELECT id AS references_id, invoice_id, (CASE WHEN status = "1" THEN "Pending" WHEN status = "2" THEN "Paid" ELSE "Failed" END) as status FROM '.$this->table.' WHERE id=:id AND merchant_id=:merchant_id');
 		$this->db->bind('id',$data["references_id"]);
 		$this->db->bind('merchant_id',$data["merchant_id"]);
 		$check = $this->db->single();
