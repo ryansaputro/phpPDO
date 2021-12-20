@@ -10,7 +10,6 @@ if (1 == $argc) {
 }
 
 switch ($argv[1]) {
-    //Add Company
     case 'cekTransaksi':
         if (!array_key_exists(2, $argv)) {
             fwrite(STDOUT, "mohon masukkan no invoice anda." . "\n");
@@ -30,7 +29,6 @@ switch ($argv[1]) {
     
     break;       
         
-    //Edit Company
     case 'updateTransaksi':
     if (!array_key_exists(2, $argv)) {
         fwrite(STDOUT, "mohon masukkan no invoice anda." . "\n");
@@ -63,6 +61,14 @@ switch ($argv[1]) {
     }
     break;
 
+    case 'migration';
+        fwrite(STDOUT, "mohon tunggu" . "\n");
+        $db = new MTransaksi;
+        $data = $db->migration();
+        fwrite(STDOUT, $data . "\n");
+    break;
+
+
     default:
         fwrite(STDOUT, "Command not supported!" . "\n");
         writeAvailableCommands();
@@ -72,6 +78,7 @@ function writeAvailableCommands()
 {
     $text = "php transaksi.php";
     fwrite(STDOUT, "Available commads:" . "\n\n");
+    fwrite(STDOUT, "$text migration". "\n");
     fwrite(STDOUT, "$text cekTransaksi {no invoice}". "\n");
     fwrite(STDOUT, "$text updateTransaksi {no invoice}". "\n");
 }

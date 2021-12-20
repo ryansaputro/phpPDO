@@ -1,11 +1,13 @@
 # CARA INSTALL DI XAMPP
 
 1. pindahkan project ke dalam folder htdocs.
-2. export database ke phpmyadmin.
+2. jalankan command berikut untuk migrasi table
+    - cd CLI
+    - php transaksi.php migration
 3. edit file di api/config/config.php.
     - rename base url nya sesuai dengan project yang di simpan di htdocs.
-    - edit DB_USER sesuai dengan username phpmyadmin anda.
-    - edit DB_PASS sesuai dengan password phpmyadmin anda.
+    - edit DB_USER sesuai dengan username anda.
+    - edit DB_PASS sesuai dengan password anda.
     - edit DB_NAME sesuai dengan nama database yang anda buat.
 4. running aplikasi.
 
