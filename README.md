@@ -42,7 +42,7 @@ buka aplikasi postman anda
 2. Mendapatkan/Get status Transaksi Pembayaran: http://localhost/development/pribadi/transaksi/get_status_payment (**GET**)<br/>
     - ```json
         {
-            "references_id": "1",
+            "references_id": 1,
             "merchant_id": "TRX01"
         }
     
