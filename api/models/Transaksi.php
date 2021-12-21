@@ -17,6 +17,8 @@ class Transaksi{
 			$rules["message"][] =  "please insert references id!";
 		}else if($data["references_id"] == ""){
 			$rules["message"][] =  "please make sure your references id!";
+		}else if(!is_numeric($data["references_id"])){
+			$rules["message"][] =  "wrong references id!";
 		}
 
 		if(empty($data["merchant_id"])){
